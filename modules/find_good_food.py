@@ -5,19 +5,21 @@ from handlers.MenuParser import MenuParser
 from collections import defaultdict
 
 
-def find_good_food():
+def find_good_food(good_food=None):
     """
-    Check the UCSC dining hall menus to see if anything is worth eating. Return a list containing
+    Check the UCSC dining hall menus to see if anything is worth eating. Return a dictionary of types of food found and
+    their corresponding menu items. good_food is an optional override which specifies a dict of sets, where each set
+    contains the keywords that are found exclusively in the desired food type
     :return:
     """
     parser = MenuParser()
 
     menus, urls = parser.get_todays_menus()
 
-    good_food = {"indian food": {"korma", "curry", "naan", "saag", "samosa", "paneer"},
-                 "mac and cheese": {"mac"},
-                 "pizza": {"pizza"},
-                 "chicken wings": {"wings"}}
+    if good_food is None:
+        good_food = {"indian food": {"korma", "curry", "naan", "saag", "samosa", "paneer"},
+                     "mac and cheese": {"mac"},
+                     "chicken wings": {"wings"}}
 
     good_foods_detected = defaultdict(lambda: defaultdict(list))
 
