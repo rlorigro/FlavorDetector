@@ -1,2 +1,2 @@
-# dining_hall_notifier
+# FlavorDetector
 Where is the indian food at all times
