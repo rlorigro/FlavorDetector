@@ -75,6 +75,9 @@ class FoodBot:
 
             good_foods_detected, urls = self.find_good_food(self.good_food)
 
+            if len(good_foods_detected) == 0:
+                print("No good food detected :(")
+
             if len(good_foods_detected) > 0:
                 message = self.generate_message(good_foods_detected, urls)
 
