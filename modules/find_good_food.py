@@ -18,7 +18,7 @@ def find_good_food(good_food=None):
 
     if good_food is None:
         good_food = {"indian food": {"korma", "curry", "naan", "saag", "samosa", "paneer"},
-                     "mac and cheese": {"mac"},
+                     "mac and cheese": {"mac+cheese"},
                      "chicken wings": {"wings"}}
 
     good_foods_detected = defaultdict(lambda: defaultdict(list))
@@ -26,8 +26,12 @@ def find_good_food(good_food=None):
     for dining_hall in menus:
         for item in menus[dining_hall]:
             for food_type in good_food:
-                for keyword in good_food[food_type]:
-                    if keyword in item.lower():
+                for keywords in good_food[food_type]:
+                    all_found = True
+                    for keyword in keywords.split('+'):
+                        if keyword not in item.lower():
+                            all_found = False
+                    if all_found:
                         good_foods_detected[food_type]["location"] = dining_hall
                         good_foods_detected[food_type]["items"].append(item)
 
