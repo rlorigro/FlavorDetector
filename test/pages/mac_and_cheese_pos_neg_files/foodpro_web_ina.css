@@ -1,0 +1,844 @@
+/* allergenfilter.asp */
+
+div.allergenfilterheader {
+font-size: 18pt;
+font-family: Arial;
+font-style: italic;
+color: #447711;
+text-align: left;}
+
+div.allergenfilterdesc {
+font-size: 10pt;
+font-family: Arial;
+color: black;
+text-align: left;}
+
+div.allergenfilterselect {
+font-size: 12pt;
+font-family: Arial;
+color: #447711;
+text-align: left;}
+
+div.allergenfilteroptions {
+font-size: 12pt;
+font-family: Arial;
+color: #447711;
+text-align: left;}
+
+/* allergenfilterinc.asp */
+
+span.allergenfilterinclinks {
+font-size: 10pt;
+font-family: Arial;
+text-align: left;
+color: #FFFFFF;}
+
+/* Date.asp */
+
+body.datebody {
+background: #FFFFFF;}
+
+div.dateselectheader {
+font-size: 10pt;
+font-family: Arial;
+font-weight : bold;
+color: black;
+text-align: left;}
+
+span.datechevrons {
+font-size: 8pt;
+font-family: Arial;
+font-weight : bold;
+color: black;}
+
+span.dateselections {
+font-size: 8pt;
+font-family: Arial;
+color: black;}
+
+table.datelegendcontainer{
+padding: 3px;
+border-collapse:collapse;
+border-spacing: 0;
+width: 100%;
+border-style: solid;
+border-width: 1px;
+background-color: white;
+border-color: #aaaaaa;}
+
+td.datelegendcontainer{
+padding: 3px;
+border-spacing: 0;
+border-style: solid;
+border-width: 1px;
+background-color: white;
+border-color: #aaaaaa;}	
+
+div.datelegendheader {
+font-size: 12pt;
+font-family: Arial;
+font-weight: bold;
+color: #333333;
+text-align: left;}
+
+span.datelegendicons {
+font-size: 10pt;
+font-family: Arial;
+color: #333333;}
+
+span.datelegendspecialchars {
+font-size: 10pt;
+font-family: wingdings;
+font-weight: bold;
+color: black;}
+
+span.datelegendtextonly {
+font-size: 10pt;
+font-family: Arial;
+font-weight: bold;
+color: black;}
+
+/* Head.asp */
+
+body.headbody {
+background-color: #92b44f;}
+
+table.headcontainer{
+padding:0;
+border-spacing:0;
+width:100%;}
+
+div.headsysname {
+font-size: 24pt;
+font-family: Arial;
+font-weight : bold;
+color: #FFFFFF;
+text-align: center;
+letter-spacing:-1px;}
+
+div.headtitle {
+font-size: 20pt;
+font-family: Arial;
+font-weight : bold;
+color: #FFFFFF;
+text-align: center;
+letter-spacing:-1px;}
+
+div.headlocation {
+font-size: 14pt;
+font-family: Arial;
+font-weight : bold;
+color: #FFFFFF;
+text-align: center;
+}
+
+/* Label.asp */
+
+body.labelbody {
+background: #f5f8fa;}
+
+div.labelrecipe {
+font-size: 18pt;
+font-family: Arial;
+color: #447711;
+text-align: center;}
+
+div.labelnotavailable {
+font-size: 12pt;
+font-family: Arial;
+font-style: italic;
+color: #0000FF;
+text-align: center;}
+
+div.labelnotes {
+font-size: 10pt;
+font-family: Arial;
+font-style: italic;
+color: black;
+text-align: left;
+}
+
+div.labelfooter {
+font-size: 10pt;
+font-family: Arial;
+color: black;
+text-align: left;
+}
+
+span.labelingredientscaption {
+font-size: 14pt;
+font-family: Arial;
+font-weight: bold;
+color: black;}
+
+span.labelingredientsvalue {
+font-size: 14pt;
+font-family: Arial;
+color: black;}
+
+span.labelallergenscaption {
+font-size: 14pt;
+font-family: Arial;
+font-weight: bold;
+color: black;}
+
+span.labelallergensvalue {
+font-size: 14pt;
+font-family: Arial;
+color: black;}
+
+/* Location.asp */
+
+div.locationsysname {
+font-size: 22pt;
+font-family: Arial;
+font-style: bold;
+color: #447711;
+text-align: center;}
+
+div.locationtitle {
+font-size: 18pt;
+font-family: Arial;
+font-weight : bold;
+color: #447711;
+text-align: center;}
+
+div.locationnuttiplink {
+font-size: 8pt;
+font-family: Arial;
+color: black;
+text-align: left;}
+
+div.locationselheader {
+font-size: 12pt;
+font-family: Arial;
+font-weight : bold;
+color: black;
+text-align: left;}
+
+span.locationchoices {
+font-size: 14pt;
+font-family: Arial;
+color: black;}
+
+td.locationchoices {
+text-align: left;
+padding-top: 12px;
+}
+
+div.counterdisplay {
+font-size: 12pt;
+font-family: Arial;
+font-weight : bold;
+color: black;
+text-align: center;}
+
+span.locationtipspacer {
+font-size: 8pt;}
+
+span.locationpyramidspacer {
+font-size: 10pt;}
+
+/* MenuSamp.asp */
+
+body.menusampbody {
+background-image: URL(background.gif);
+}
+
+/*a {color: #447711;}
+a:visitied {color: #447711;}*/ 
+
+div.menusamptitle {
+font-size: 14pt;
+font-family: Arial;
+font-weight: bold;
+color: #447711;
+text-align: center;}
+
+div.menusampheader {
+font-size: 10pt;
+font-family: Arial;
+font-weight: bold;
+color: #447711;
+text-align: center;}
+
+div.menusampinstructs {
+font-size: 12pt;
+font-family: Arial;
+font-weight: bold;
+color: black;
+text-align: center;}
+
+div.menusampmeals {
+font-size: 14pt;
+font-family: Arial;
+font-weight: bold;
+color: #447711;
+text-align: left;}
+
+div.menusampcats {
+font-size: 10pt;
+font-family: Arial;
+font-weight: bold;
+text-align: left;}
+
+div.menusamprecipes {
+font-size: 10pt;
+font-family: Arial;
+text-align: left;
+color: #000000;}
+
+div.menusampprices {
+font-size: 10pt;
+font-family: Arial;
+font-weight: bold;
+text-align: left;}
+
+div.menusampproddesc {
+font-size: 10pt;
+font-family: Arial;
+text-align: left;
+color: black;}
+
+div.menusampfooter {
+font-size: 10pt;
+font-family: Arial;
+font-color: #447711;
+font-weight: bold;
+text-align: center;}
+
+span.menusampspecialchars {
+font-size: 10pt;
+font-weight: bold;
+font-family: WingDings;}
+
+span.menusampnutritive {
+font-size: 8pt;
+font-family: Arial;
+color: #447711;}
+
+span.menusampnutritive a {
+font-size: 8pt;
+font-family: Arial;
+color: #447711;}
+
+
+/* MenuSamppkdd.asp */
+
+body.menusamppkddbody {}
+
+div.menusamppkddtitle {
+font-size: 22pt;
+font-family: Arial;
+font-weight: bold;
+color: #447711;
+text-align: center;}
+
+div.menusamppkddheader {
+font-size: 18pt;
+font-family: Arial;
+font-weight: bold;
+color: #447711;
+text-align: center;}
+
+div.menusamppkddinstructs {
+font-size: 3pt;
+font-family: Arial;
+font-weight: bold;
+color: black;
+text-align: center;}
+
+div.menusamppkddmeals {
+font-size: 26pt;
+font-family: Arial;
+font-weight: bold;
+color: #F3EAC0;
+text-align: center;
+line-height: 1.5em;}
+
+div.menusamppkddcats {
+font-size: 21pt;
+font-family: Arial;
+font-weight: bold;
+text-transform: uppercase;
+color: #CDC6A2;
+text-align: left;
+line-height: 170%;
+}
+
+div.menusamppkddrecipes {
+font-size: 19pt;
+font-family: Arial;
+font-weight: bold;
+color: #333333;
+text-align: left;}
+
+div.menusamppkddrecipes a:link {
+color: #333333;
+}
+
+div.menusamppkddrecipes a:visited {
+color: #333333;
+}
+
+div.menusamppkddprices {
+font-size: 10pt;
+font-family: Arial;
+font-weight: bold;
+text-align: left;}
+
+div.menusamppkddproddesc {
+font-size: 10pt;
+font-family: Arial;
+text-align: left;
+color: black;}
+
+div.menusamppkddfooter {
+font-size: 10pt;
+font-family: Arial;
+font-color: #447711;
+font-weight: bold;
+text-align: center;}
+
+span.menusamppkddspecialchars {
+font-size: 10pt;
+font-weight: bold;
+font-family: WingDings;}
+
+span.menusamppkddnutritive {
+font-size: 8pt;
+font-family: Arial;
+color: #447711;}
+
+span.menusamppkddnutritive a {
+font-size: 8pt;
+font-family: Arial;
+color: #447711;}
+
+
+/* New_Pyramid_Info.asp */
+
+div.pyramidinfoimage {
+text-align: center;}
+
+div.pyramidinfotext {
+font-size: 10pt;
+font-family: Arial;
+color: black;
+text-align: right;}
+
+div.pyramidinfolinks {
+font-size: 10pt;
+font-family: Arial;
+color: black;
+text-align: center;}
+
+/* New_Pyramid_Include.inc */
+
+/* NutRpt.asp */
+
+body.nutrptbody {
+background: lightyellow;}
+
+div.nutrptsysname {
+font-size: 22pt;
+font-family: Arial;
+font-style: italic;
+font-weight: bold;
+color: #447711;
+text-align: center;}
+
+div.nutrpttitle {
+font-size: 18pt;
+font-family: Arial;
+font-weight: bold;
+color: #447711;
+text-align: center;}
+
+div.nutrptlocation {
+font-size: 12pt;
+font-family: Arial;
+font-weight: bold;
+color: #447711;
+text-align: center;}
+
+div.nutrptdatetimemeal {
+font-size: 10pt;
+font-family: Arial;
+font-weight: bold;
+color: #447711;
+text-align: center;}
+
+div.nutrptgroup {
+font-size: 10pt;
+font-family: Arial;
+font-weight: bold;
+color: #447711;
+text-align: center;}
+
+div.nutrptcaloricintake {
+font-size: 12pt;
+font-family: Arial;
+font-weight: bold;
+color: #447711;
+text-align: right;}
+
+div.nutrptnutheadcolumns {
+font-size: 10pt;
+font-family: Arial;
+color: black;
+text-align: center;}
+
+div.nutrptnutheadcolumns {
+font-size: 10pt;
+font-family: Arial;
+color: black;
+text-align: center;}
+
+div.nutrptunitheadcolumns {
+font-size: 10pt;
+font-family: Arial;
+color: black;
+text-align: center;}
+
+div.nutrptnames {
+font-size: 10pt;
+font-family: Arial;
+color: black;
+text-align: center;
+}
+
+div.nutrptportions {
+font-size: 10pt;
+font-family: Arial;
+color: black;
+text-align: center;
+}
+
+div.nutrptqtys {
+font-size: 10pt;
+font-family: Arial;
+color: black;
+text-align: center;
+}
+
+div.nutrptvalues {
+font-size: 10pt;
+font-family: Arial;
+color: black;
+text-align: right;
+}
+
+div.nutrptpercents {
+font-size: 10pt;
+font-family: Arial;
+color: #447711;
+text-align: right;
+}
+
+div.nutrpttotalheader{
+font-size: 10pt;
+font-family: Arial;
+font-weight: bold;
+color: black;
+text-align: center;
+}
+
+div.nutrpttotalvalues {
+font-size: 10pt;
+font-family: Arial;
+color: black;
+text-align: right;
+}
+
+div.nutrpttotalpercents {
+font-size: 10pt;
+font-family: Arial;
+color: #447711;
+text-align: right;
+}
+
+div.nutrptnote {
+font-size: 10pt;
+font-family: Arial;
+color: black;
+font-style: italic;
+text-align: center;
+}
+
+div.nutrptfooter {
+font-size: 10pt;
+font-family: Arial;
+color: black;
+text-align: left;
+}
+
+td.nutrptmainheadcolumns {
+text-align: center;
+background: #D3D3D3;
+}
+
+td.nutrptnutheadcolumns {
+text-align: center;
+background: #D3D3D3;
+}
+
+td.nutrptunitheadcolumns {
+text-align: center;
+background: #D3D3D3;
+}
+
+/* PickMenu.asp */
+
+body.pickmenubody {
+background-image: URL(background.gif);}
+
+div.pickmenudispheader {
+font-size: 10pt;
+font-family: Arial;
+font-weight: bold;
+
+line-height: 25px;
+color: #f5f4eb;
+text-align: center;}
+
+div.pickmenuinstructs {
+font-size: 12pt;
+font-family: Arial;
+font-weight: bold;
+color: #585858;
+text-align: center;
+}
+
+div.pickmenugridheader {
+font-size: 14pt;
+font-family: Arial;
+font-weight: bold;
+color: #585858;
+text-align: center;
+}
+
+div.pickmenucolmenucat {
+font-size: 12pt;
+font-family: Arial;
+color: black;
+font-style: italic;
+text-align: center;
+}
+
+div.pickmenucoldispname {
+font-size: 12pt;
+font-family: Arial;
+color: #585858;
+text-align: left;
+}
+
+div.pickmenucoldispname a:link { 
+color: #00458c;
+text-decoration: none;
+}
+
+div.pickmenucoldispname a:visited { 
+color: #00458c;
+text-decoration: none;
+}
+
+div.pickmenucoldispname a:hover {
+color: #00458c;
+text-decoration: underline;
+}
+
+div.pickmenucoldispname a:active {
+color: #00458c;
+text-decoration: underline;
+}
+
+div.pickmenucolportions {
+font-size: 12pt;
+font-family: Arial;
+color: #447711;
+text-align: center;
+}
+
+div.pickmenucolprice {
+font-size: 12pt;
+font-family: Arial;
+text-align: center;
+color: #447711;
+}
+
+div.pickmenufooter {
+font-size: 8pt;
+font-family: Arial;
+font-weight: bold;
+text-align: center;
+color: #447711;
+}
+
+span.pickmenucolheaders {
+font-size: 12pt;
+font-family: Arial;
+font-weight: bold;
+color: black;
+}
+
+td.pickmenugridheader {
+background: #f5f4eb;
+}
+
+td.pickmenucolheaders {
+background: #EDEDED;
+text-align: center;
+}
+
+/* PickMenupkdd.asp */
+
+body.pickmenupkddbody {
+background-image: URL(backgroundd.jpg);}
+
+div.pickmenupkdddispheader {
+font-size: 8pt;
+font-family: Arial;
+font-weight: bold;
+color: "#033AA1";
+text-align: center;
+}
+
+div.pickmenupkddinstructs {
+font-size: 12pt;
+font-family: Arial;
+font-weight: bold;
+color: black;
+text-align: center;
+}
+
+div.pickmenupkddgridheader {
+font-size: 28pt;
+font-family: Arial;
+font-weight: bold;
+color: #FFFFFF;
+text-align: center;
+}
+
+div.pickmenupkddcolmenucat {
+font-size: 28pt;
+font-family: Arial;
+font-weight: bold;
+color: #F3EAC0;
+text-transform: uppercase;
+text-align: center;
+}
+
+div.pickmenupkddcoldispname {
+font-size: 28pt;
+font-family: Arial;
+font-weight: bold;
+color: #F3EAC0;
+text-align: center;
+}
+
+div.pickmenupkddcolportions {
+font-size: 12pt;
+font-family: Arial;
+color: #447711;
+text-align: center;
+}
+
+div.pickmenupkddcolprice {
+font-size: 12pt;
+font-family: Arial;
+text-align: center;
+color: #447711;
+}
+
+div.pickmenupkddfooter {
+font-size: 8pt;
+font-family: Arial;
+font-weight: bold;
+text-align: center;
+color: #033AA1;
+}
+
+span.pickmenupkddcolheaders {
+font-size: 12pt;
+font-family: Arial;
+font-weight: bold;
+color: black;
+}
+
+td.pickmenupkddgridheader {
+background: #033AA1;
+}
+
+td.pickmenupkddcolheaders {
+background: #D3D3D3;
+text-align: center;
+}
+
+
+/* Tip.asp */
+
+body.tipbody {
+background: lightyellow;
+}
+
+div.tipdisplay {
+font-size: 8pt;
+font-family: Arial;
+color: black;
+text-align: center;}
+
+/* Links */
+a:link {
+color: blue;
+text-decoration: underline;
+}
+a:visited {
+color: royalblue;
+text-decoration: underline;
+}
+a:active {
+color: richblue;
+text-decoration: underline;
+}
+a:hover {
+color: royalblue;
+text-decoration: none;
+}
+
+
+/* Copyright display information -- Only to be changed by AIS, color may be modified by client */
+
+div.copyrightalign {
+text-align: center;}
+
+span.copyrightyear {
+font-size: 10pt;
+font-family: Arial;
+font-style: italic;
+color: #0000FF;}
+
+span.copyrightAIS {
+font-size: 10pt;
+font-family: Arial;
+font-weight: bold;
+color: #0000FF;}
+
+span.copyrightreserved {
+font-size: 10pt;
+font-family: Arial;
+font-style: italic;
+color: #0000FF;}
+
+/* "POWERED BY FOODPRO" display -- Only to be changed by AIS, color may be modified by client */
+
+div.poweredbyfoodpro {
+font-size: 12pt;
+font-family: Arial;
+font-style: italic;
+font-weight: bold;
+color: black;}
+
+/* The following is required by Aurora Information Systems, DO NOT MODIFY OR REMOVE */
+/*   FOODPRO_WEB_INA.CSS, Version 2.2.3 */
+/* End of Aurora Information Systems Required Text */

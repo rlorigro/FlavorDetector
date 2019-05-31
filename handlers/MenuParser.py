@@ -24,24 +24,30 @@ class MenuParser:
         for name, info in self.dining_halls.items():
             url = self.menu_root_url + urlencode(info)
 
-
             page = requests.get(url).text
 
-            soup = BeautifulSoup(page, "html.parser")
-
-            divs = soup.find_all("div", class_="pickmenucoldispname")
-
-            items = list()
-            for div in divs:
-                item_name = div.find('a').contents[0]
-
-                if not item_name.startswith("http"):
-                    items.append(item_name)
-
-            menus[name] = items
-            urls[name] = url
+            menus, urls = self.parse_menu_page(name=name, page=page, url=url, menus=menus, urls=urls)
 
         return menus, urls
+
+    @staticmethod
+    def parse_menu_page(name, page, url, menus, urls):
+        soup = BeautifulSoup(page, "html.parser")
+
+        divs = soup.find_all("div", class_="pickmenucoldispname")
+
+        items = list()
+        for div in divs:
+            item_name = div.find('a').contents[0]
+
+            if not item_name.startswith("http"):
+                items.append(item_name)
+
+        menus[name] = items
+        urls[name] = url
+
+        return menus, urls
+
 
 
 
