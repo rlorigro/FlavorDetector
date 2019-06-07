@@ -22,8 +22,8 @@ class FoodBot:
         self.date_prev = datetime.date(year=1, month=1, day=1)
         self.target_time = target_time
 
-        self.good_food = {"Indian food": {"korma", "curry", "naan", "saag", "samosa", "paneer"},
-                          "Mac and cheese": {"mac"},
+        self.good_food = {"Indian food": {"korma", "tikka", "curry", "naan", "saag", "samosa", "paneer", "madras"},
+                          "Mac and cheese": {"mac+cheese"},
                           "Chicken wings": {"wings"}}
 
         self.emojis = {"Indian food": ":flag-in:",
@@ -71,7 +71,7 @@ class FoodBot:
 
     def update(self):
         if self.client.rtm_connect(with_team_state=False):
-            print("Starter Bot connected!")
+            print("Bot connected!")
 
             good_foods_detected, urls = self.find_good_food(self.good_food)
 
@@ -99,7 +99,7 @@ if __name__ == "__main__":
     channel_name = "lunch"
 
     target_hour = 11
-    target_minute = 30
+    target_minute = 0
     target_time = datetime.time(hour=target_hour, minute=target_minute)
 
     bot = FoodBot(channel=channel_name, config_path=config_path, target_time=target_time)

@@ -1,0 +1,779 @@
+<!-- The following is required by Aurora Information Systems, DO NOT MODIFY OR REMOVE -->
+<!-- FIELDFILT.ASP, Version 2.2.1  -->
+<!-- End of Aurora Information Systems Required Text -->
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Aurora Dining Services</title>
+<link rel="stylesheet" href="mac_and_cheese_pos_neg_files/foodpro_web_ina.css" type="text/css">
+<script type="text/javascript" async="" src="mac_and_cheese_pos_neg_files/ga.js"></script><script language="JAVASCRIPT"> 
+function ChangeTitle() {
+  top.frames[0].location.href="head.asp?WeeksMenus=Interactive+Nutritive+Analysis&locationNum=40&locationName=Colleges+Nine+%26+Ten+Dining+Hall&sName=";
+  top.frames[1].location.href="date.asp?shortflg=&locationNum=40&locationName=Colleges+Nine+%26+Ten+Dining+Hall&sName=&naFlag=1";
+  closePopImg();
+}
+function fillQty(num) {
+  if (document.forms[0].recipe[num].checked) {
+  document.forms[0].QTY[num].value=1;
+  document.forms[0].QTY[num].focus();
+  document.forms[0].QTY[num].select();
+  } else {
+  document.forms[0].QTY[num].value="";
+  }
+}
+function checkBox(num) {
+  if (document.forms[0].QTY[num].value != "") {
+  document.forms[0].recipe[num].checked=true
+  } else {
+  document.forms[0].recipe[num].checked=false
+  }
+}
+function allowReset() {
+  return window.confirm ("Are you sure you want to clear this form?");
+}
+
+function allowSend(num)  {
+  var RecFlg=0;
+  for(i=0; i < num; i++) {
+    var RecChecked = document.forms[0].recipe[i].checked
+    if (RecChecked) {
+      RecFlg=1;
+      break
+    }
+  }
+  if (RecFlg != 1) {
+    alert("Please make a selection.");
+    return false;
+  } else {
+    var NonNumFlg=0;
+    for(i=0; i < num; i++) {
+      if(document.forms[0].QTY[i].value != "") {
+        if(((document.forms[0].QTY[i].value) != parseFloat(document.forms[0].QTY[i].value)) || (document.forms[0].QTY[i].value < 0) || (document.forms[0].QTY[i].value > 9))   {
+          NonNumFlg=1;
+          break
+        }
+      }
+    }
+    if (NonNumFlg == 1) {
+      alert("Quantities must be real number, greater than 0, and less than or equal to 9.");
+      return false;
+    } else {
+      return true;
+    }
+  }              
+}
+var popImg = null
+var curHeight = null
+var popTop = null
+
+function openPopImg(picName,windowWidth,windowHeight) {
+  closePopImg();
+  curHeight=screen.availHeight;
+  popTop = eval(curHeight - 300);
+  popImg=window.open(picName, '_new', "toolbar=no,scrollbars=no,resizable=yes,top=" + popTop + ",left='0',width=" + (parseInt(windowWidth)+0) + ",height=" + (parseInt(windowHeight)+0));
+}
+function closePopImg(){
+  if(navigator.appName != "Microsoft Internet Explorer" || parseInt(navigator.appVersion) >= 4) if(popImg != null) if(!popImg.closed) popImg.close()
+}
+function setStatus(msg){
+  status = msg;
+  return true;
+}
+</script></head>
+
+  <body class="pickmenubody" onload="ChangeTitle();" onunload="closePopImg();">
+  
+    <div class="pickmenuinstructs">Select the menu items to report, or click recipe name for label:</div>
+    <div align="CENTER">
+    
+    <table width="70%" cellspacing="0" cellpadding="0" bordercolor="#dbdcdb" border="1" bgcolor="#FFFFFF" align="center">
+    <form method="post" action="nutRpt.asp?locationNum=40&amp;locationName=Colleges+Nine+%26+Ten+Dining+Hall&amp;dtdate=06%2F01%2F2019&amp;mealName=Late+Night&amp;sName=" target="_top" name="menuForm" onreset="return allowReset();" onsubmit="return allowSend(16);"></form>
+      <tbody><tr>
+        <td class="pickmenugridheader" colspan="3" width="71%">
+          <a name="Breakfast"><div class="pickmenugridheader">Late Night&nbsp;Menu for Saturday, June 01, 2019</div></a>
+        </td>
+      </tr>     
+      <tr>
+        <td class="pickmenucolheaders"><span class="pickmenucolheaders">Recipe Description</span></td>
+        <td class="pickmenucolheaders"><span class="pickmenucolheaders">Qty</span></td>
+        <td class="pickmenucolheaders"><span class="pickmenucolheaders">Portion</span></td>
+        
+      </tr>
+      
+      <tr>
+        <td bgcolor="#FFFFFF">
+        
+          <table width="100%" cellpadding="0" border="0">
+            <tbody><tr>
+              <td>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+<td><div class="pickmenucoldispname"><input type="CHECKBOX" name="recipe" value="012021*5" onclick="fillQty(0);"><a href="https://nutrition.sa.ucsc.edu/label.asp?locationNum=40&amp;locationName=Colleges+Nine+%26+Ten+Dining+Hall&amp;dtdate=06%2F01%2F2019&amp;RecNumAndPort=012021%2A5" target="_top" onmouseover="window.status = 'Click for label of this item.'; return true;" onmouseout="window.status= ' ';">Cajun Lightning Chicken</a></div></td>
+
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/soy.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/halal.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                   </tr>
+                 </tbody></table>
+              </td>
+              
+                 <td width="10%">
+                   &nbsp;
+                 </td>
+              
+            </tr>
+          </tbody></table>
+        </td>
+        <td bgcolor="#FFFFFF" align="center">
+<input type="TEXT" name="QTY" size="4" maxlength="4" onblur="checkBox(0);">
+
+        </td>
+        <td bgcolor="#FFFFFF"><div class="pickmenucolportions">5&nbsp;oz</div></td>
+        
+      </tr>
+      
+      <tr>
+        <td bgcolor="#EDEDED">
+        
+          <table width="100%" cellpadding="0" border="0">
+            <tbody><tr>
+              <td>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+<td><div class="pickmenucoldispname"><input type="CHECKBOX" name="recipe" value="401018*6" onclick="fillQty(1);"><a href="https://nutrition.sa.ucsc.edu/label.asp?locationNum=40&amp;locationName=Colleges+Nine+%26+Ten+Dining+Hall&amp;dtdate=06%2F01%2F2019&amp;RecNumAndPort=401018%2A6" target="_top" onmouseover="window.status = 'Click for label of this item.'; return true;" onmouseout="window.status= ' ';">Macaroni &amp; Cheese</a></div></td>
+
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/soy.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/eggs.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/milk.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                   </tr>
+                 </tbody></table>
+              </td>
+              
+                 <td width="10%">
+                   &nbsp;
+                 </td>
+              
+            </tr>
+          </tbody></table>
+        </td>
+        <td bgcolor="#EDEDED" align="center">
+<input type="TEXT" name="QTY" size="4" maxlength="4" onblur="checkBox(1);">
+
+        </td>
+        <td bgcolor="#EDEDED"><div class="pickmenucolportions">6&nbsp;oz</div></td>
+        
+      </tr>
+      
+      <tr>
+        <td bgcolor="#FFFFFF">
+        
+          <table width="100%" cellpadding="0" border="0">
+            <tbody><tr>
+              <td>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+<td><div class="pickmenucoldispname"><input type="CHECKBOX" name="recipe" value="100037*3" onclick="fillQty(2);"><a href="https://nutrition.sa.ucsc.edu/label.asp?locationNum=40&amp;locationName=Colleges+Nine+%26+Ten+Dining+Hall&amp;dtdate=06%2F01%2F2019&amp;RecNumAndPort=100037%2A3" target="_top" onmouseover="window.status = 'Click for label of this item.'; return true;" onmouseout="window.status= ' ';">Roasted Vegetables</a></div></td>
+
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/vegan.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/gluten.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                   </tr>
+                 </tbody></table>
+              </td>
+              
+                 <td width="10%">
+                   &nbsp;
+                 </td>
+              
+            </tr>
+          </tbody></table>
+        </td>
+        <td bgcolor="#FFFFFF" align="center">
+<input type="TEXT" name="QTY" size="4" maxlength="4" onblur="checkBox(2);">
+
+        </td>
+        <td bgcolor="#FFFFFF"><div class="pickmenucolportions">3&nbsp;oz</div></td>
+        
+      </tr>
+      
+      <tr>
+        <td bgcolor="#EDEDED">
+        
+          <table width="100%" cellpadding="0" border="0">
+            <tbody><tr>
+              <td>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+<td><div class="pickmenucoldispname"><input type="CHECKBOX" name="recipe" value="999855*1" onclick="fillQty(3);"><a href="https://nutrition.sa.ucsc.edu/label.asp?locationNum=40&amp;locationName=Colleges+Nine+%26+Ten+Dining+Hall&amp;dtdate=06%2F01%2F2019&amp;RecNumAndPort=999855%2A1" target="_top" onmouseover="window.status = 'Click for label of this item.'; return true;" onmouseout="window.status= ' ';">Banh Mi Vegan Hot Dog</a></div></td>
+
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/vegan.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/soy.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                   </tr>
+                 </tbody></table>
+              </td>
+              
+                 <td width="10%">
+                   &nbsp;
+                 </td>
+              
+            </tr>
+          </tbody></table>
+        </td>
+        <td bgcolor="#EDEDED" align="center">
+<input type="TEXT" name="QTY" size="4" maxlength="4" onblur="checkBox(3);">
+
+        </td>
+        <td bgcolor="#EDEDED"><div class="pickmenucolportions">1&nbsp;ea</div></td>
+        
+      </tr>
+      
+      <tr>
+        <td bgcolor="#FFFFFF">
+        
+          <table width="100%" cellpadding="0" border="0">
+            <tbody><tr>
+              <td>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+<td><div class="pickmenucoldispname"><input type="CHECKBOX" name="recipe" value="161012*3" onclick="fillQty(4);"><a href="https://nutrition.sa.ucsc.edu/label.asp?locationNum=40&amp;locationName=Colleges+Nine+%26+Ten+Dining+Hall&amp;dtdate=06%2F01%2F2019&amp;RecNumAndPort=161012%2A3" target="_top" onmouseover="window.status = 'Click for label of this item.'; return true;" onmouseout="window.status= ' ';">Tator Tots</a></div></td>
+
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/soy.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                   </tr>
+                 </tbody></table>
+              </td>
+              
+                 <td width="10%">
+                   &nbsp;
+                 </td>
+              
+            </tr>
+          </tbody></table>
+        </td>
+        <td bgcolor="#FFFFFF" align="center">
+<input type="TEXT" name="QTY" size="4" maxlength="4" onblur="checkBox(4);">
+
+        </td>
+        <td bgcolor="#FFFFFF"><div class="pickmenucolportions">3&nbsp;oz</div></td>
+        
+      </tr>
+      
+      <tr>
+        <td bgcolor="#EDEDED">
+        
+          <table width="100%" cellpadding="0" border="0">
+            <tbody><tr>
+              <td>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+<td><div class="pickmenucoldispname"><input type="CHECKBOX" name="recipe" value="400082*1/12" onclick="fillQty(5);"><a href="https://nutrition.sa.ucsc.edu/label.asp?locationNum=40&amp;locationName=Colleges+Nine+%26+Ten+Dining+Hall&amp;dtdate=06%2F01%2F2019&amp;RecNumAndPort=400082%2A1%2F12" target="_top" onmouseover="window.status = 'Click for label of this item.'; return true;" onmouseout="window.status= ' ';">Cheese Pizza</a></div></td>
+
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/soy.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/milk.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/veggie.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                   </tr>
+                 </tbody></table>
+              </td>
+              
+                 <td width="10%">
+                   &nbsp;
+                 </td>
+              
+            </tr>
+          </tbody></table>
+        </td>
+        <td bgcolor="#EDEDED" align="center">
+<input type="TEXT" name="QTY" size="4" maxlength="4" onblur="checkBox(5);">
+
+        </td>
+        <td bgcolor="#EDEDED"><div class="pickmenucolportions">1/12&nbsp;pie</div></td>
+        
+      </tr>
+      
+      <tr>
+        <td bgcolor="#FFFFFF">
+        
+          <table width="100%" cellpadding="0" border="0">
+            <tbody><tr>
+              <td>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+<td><div class="pickmenucoldispname"><input type="CHECKBOX" name="recipe" value="044066*1/12" onclick="fillQty(6);"><a href="https://nutrition.sa.ucsc.edu/label.asp?locationNum=40&amp;locationName=Colleges+Nine+%26+Ten+Dining+Hall&amp;dtdate=06%2F01%2F2019&amp;RecNumAndPort=044066%2A1%2F12" target="_top" onmouseover="window.status = 'Click for label of this item.'; return true;" onmouseout="window.status= ' ';">Roasted Vegetable Pizza</a></div></td>
+
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/soy.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/milk.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/veggie.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                   </tr>
+                 </tbody></table>
+              </td>
+              
+                 <td width="10%">
+                   &nbsp;
+                 </td>
+              
+            </tr>
+          </tbody></table>
+        </td>
+        <td bgcolor="#FFFFFF" align="center">
+<input type="TEXT" name="QTY" size="4" maxlength="4" onblur="checkBox(6);">
+
+        </td>
+        <td bgcolor="#FFFFFF"><div class="pickmenucolportions">1/12&nbsp;pie</div></td>
+        
+      </tr>
+      
+      <tr>
+        <td bgcolor="#EDEDED">
+        
+          <table width="100%" cellpadding="0" border="0">
+            <tbody><tr>
+              <td>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+<td><div class="pickmenucoldispname"><input type="CHECKBOX" name="recipe" value="020549*3" onclick="fillQty(7);"><a href="https://nutrition.sa.ucsc.edu/label.asp?locationNum=40&amp;locationName=Colleges+Nine+%26+Ten+Dining+Hall&amp;dtdate=06%2F01%2F2019&amp;RecNumAndPort=020549%2A3" target="_top" onmouseover="window.status = 'Click for label of this item.'; return true;" onmouseout="window.status= ' ';">Oven Roasted Chicken Thigh</a></div></td>
+
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/gluten.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/halal.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                   </tr>
+                 </tbody></table>
+              </td>
+              
+                 <td width="10%">
+                   &nbsp;
+                 </td>
+              
+            </tr>
+          </tbody></table>
+        </td>
+        <td bgcolor="#EDEDED" align="center">
+<input type="TEXT" name="QTY" size="4" maxlength="4" onblur="checkBox(7);">
+
+        </td>
+        <td bgcolor="#EDEDED"><div class="pickmenucolportions">3&nbsp;oz</div></td>
+        
+      </tr>
+      
+      <tr>
+        <td bgcolor="#FFFFFF">
+        
+          <table width="100%" cellpadding="0" border="0">
+            <tbody><tr>
+              <td>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+<td><div class="pickmenucoldispname"><input type="CHECKBOX" name="recipe" value="163001*3" onclick="fillQty(8);"><a href="https://nutrition.sa.ucsc.edu/label.asp?locationNum=40&amp;locationName=Colleges+Nine+%26+Ten+Dining+Hall&amp;dtdate=06%2F01%2F2019&amp;RecNumAndPort=163001%2A3" target="_top" onmouseover="window.status = 'Click for label of this item.'; return true;" onmouseout="window.status= ' ';">Steamed Rice</a></div></td>
+
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/vegan.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/gluten.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                   </tr>
+                 </tbody></table>
+              </td>
+              
+                 <td width="10%">
+                   &nbsp;
+                 </td>
+              
+            </tr>
+          </tbody></table>
+        </td>
+        <td bgcolor="#FFFFFF" align="center">
+<input type="TEXT" name="QTY" size="4" maxlength="4" onblur="checkBox(8);">
+
+        </td>
+        <td bgcolor="#FFFFFF"><div class="pickmenucolportions">3&nbsp;oz</div></td>
+        
+      </tr>
+      
+      <tr>
+        <td bgcolor="#EDEDED">
+        
+          <table width="100%" cellpadding="0" border="0">
+            <tbody><tr>
+              <td>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+<td><div class="pickmenucoldispname"><input type="CHECKBOX" name="recipe" value="060133*1" onclick="fillQty(9);"><a href="https://nutrition.sa.ucsc.edu/label.asp?locationNum=40&amp;locationName=Colleges+Nine+%26+Ten+Dining+Hall&amp;dtdate=06%2F01%2F2019&amp;RecNumAndPort=060133%2A1" target="_top" onmouseover="window.status = 'Click for label of this item.'; return true;" onmouseout="window.status= ' ';">Condiments</a></div></td>
+
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/eggs.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/milk.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/soy.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/fish.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                   </tr>
+                 </tbody></table>
+              </td>
+              
+                 <td width="10%">
+                   &nbsp;
+                 </td>
+              
+            </tr>
+          </tbody></table>
+        </td>
+        <td bgcolor="#EDEDED" align="center">
+<input type="TEXT" name="QTY" size="4" maxlength="4" onblur="checkBox(9);">
+
+        </td>
+        <td bgcolor="#EDEDED"><div class="pickmenucolportions">1&nbsp;oz</div></td>
+        
+      </tr>
+      
+      <tr>
+        <td bgcolor="#FFFFFF">
+        
+          <table width="100%" cellpadding="0" border="0">
+            <tbody><tr>
+              <td>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+<td><div class="pickmenucoldispname"><input type="CHECKBOX" name="recipe" value="233094*5" onclick="fillQty(10);"><a href="https://nutrition.sa.ucsc.edu/label.asp?locationNum=40&amp;locationName=Colleges+Nine+%26+Ten+Dining+Hall&amp;dtdate=06%2F01%2F2019&amp;RecNumAndPort=233094%2A5" target="_top" onmouseover="window.status = 'Click for label of this item.'; return true;" onmouseout="window.status= ' ';">General Tso's Beef</a></div></td>
+
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/beef.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/nuts.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/soy.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/eggs.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                   </tr>
+                 </tbody></table>
+              </td>
+              
+                 <td width="10%">
+                   &nbsp;
+                 </td>
+              
+            </tr>
+          </tbody></table>
+        </td>
+        <td bgcolor="#FFFFFF" align="center">
+<input type="TEXT" name="QTY" size="4" maxlength="4" onblur="checkBox(10);">
+
+        </td>
+        <td bgcolor="#FFFFFF"><div class="pickmenucolportions">5&nbsp;oz</div></td>
+        
+      </tr>
+      
+      <tr>
+        <td bgcolor="#EDEDED">
+        
+          <table width="100%" cellpadding="0" border="0">
+            <tbody><tr>
+              <td>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+<td><div class="pickmenucoldispname"><input type="CHECKBOX" name="recipe" value="010118*1" onclick="fillQty(11);"><a href="https://nutrition.sa.ucsc.edu/label.asp?locationNum=40&amp;locationName=Colleges+Nine+%26+Ten+Dining+Hall&amp;dtdate=06%2F01%2F2019&amp;RecNumAndPort=010118%2A1" target="_top" onmouseover="window.status = 'Click for label of this item.'; return true;" onmouseout="window.status= ' ';">Hawaiian Bar</a></div></td>
+
+                   </tr>
+                 </tbody></table>
+              </td>
+              
+                 <td width="10%">
+                   &nbsp;
+                 </td>
+              
+            </tr>
+          </tbody></table>
+        </td>
+        <td bgcolor="#EDEDED" align="center">
+<input type="TEXT" name="QTY" size="4" maxlength="4" onblur="checkBox(11);">
+
+        </td>
+        <td bgcolor="#EDEDED"><div class="pickmenucolportions">1&nbsp;ea</div></td>
+        
+      </tr>
+      
+      <tr>
+        <td bgcolor="#FFFFFF">
+        
+          <table width="100%" cellpadding="0" border="0">
+            <tbody><tr>
+              <td>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+<td><div class="pickmenucoldispname"><input type="CHECKBOX" name="recipe" value="999925*2" onclick="fillQty(12);"><a href="https://nutrition.sa.ucsc.edu/label.asp?locationNum=40&amp;locationName=Colleges+Nine+%26+Ten+Dining+Hall&amp;dtdate=06%2F01%2F2019&amp;RecNumAndPort=999925%2A2" target="_top" onmouseover="window.status = 'Click for label of this item.'; return true;" onmouseout="window.status= ' ';">Potato Mac Salad</a></div></td>
+
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/vegan.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/soy.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                   </tr>
+                 </tbody></table>
+              </td>
+              
+                 <td width="10%">
+                   &nbsp;
+                 </td>
+              
+            </tr>
+          </tbody></table>
+        </td>
+        <td bgcolor="#FFFFFF" align="center">
+<input type="TEXT" name="QTY" size="4" maxlength="4" onblur="checkBox(12);">
+
+        </td>
+        <td bgcolor="#FFFFFF"><div class="pickmenucolportions">2&nbsp;oz</div></td>
+        
+      </tr>
+      
+      <tr>
+        <td bgcolor="#EDEDED">
+        
+          <table width="100%" cellpadding="0" border="0">
+            <tbody><tr>
+              <td>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+<td><div class="pickmenucoldispname"><input type="CHECKBOX" name="recipe" value="175045*3" onclick="fillQty(13);"><a href="https://nutrition.sa.ucsc.edu/label.asp?locationNum=40&amp;locationName=Colleges+Nine+%26+Ten+Dining+Hall&amp;dtdate=06%2F01%2F2019&amp;RecNumAndPort=175045%2A3" target="_top" onmouseover="window.status = 'Click for label of this item.'; return true;" onmouseout="window.status= ' ';">Steamed Broccoli</a></div></td>
+
+                   </tr>
+                 </tbody></table>
+              </td>
+              
+                 <td width="10%">
+                   &nbsp;
+                 </td>
+              
+            </tr>
+          </tbody></table>
+        </td>
+        <td bgcolor="#EDEDED" align="center">
+<input type="TEXT" name="QTY" size="4" maxlength="4" onblur="checkBox(13);">
+
+        </td>
+        <td bgcolor="#EDEDED"><div class="pickmenucolportions">3&nbsp;OZ</div></td>
+        
+      </tr>
+      
+      <tr>
+        <td bgcolor="#FFFFFF">
+        
+          <table width="100%" cellpadding="0" border="0">
+            <tbody><tr>
+              <td>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+<td><div class="pickmenucoldispname"><input type="CHECKBOX" name="recipe" value="400035*3" onclick="fillQty(14);"><a href="https://nutrition.sa.ucsc.edu/label.asp?locationNum=40&amp;locationName=Colleges+Nine+%26+Ten+Dining+Hall&amp;dtdate=06%2F01%2F2019&amp;RecNumAndPort=400035%2A3" target="_top" onmouseover="window.status = 'Click for label of this item.'; return true;" onmouseout="window.status= ' ';">Sticky Rice</a></div></td>
+
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/vegan.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/gluten.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                   </tr>
+                 </tbody></table>
+              </td>
+              
+                 <td width="10%">
+                   &nbsp;
+                 </td>
+              
+            </tr>
+          </tbody></table>
+        </td>
+        <td bgcolor="#FFFFFF" align="center">
+<input type="TEXT" name="QTY" size="4" maxlength="4" onblur="checkBox(14);">
+
+        </td>
+        <td bgcolor="#FFFFFF"><div class="pickmenucolportions">3&nbsp;oz</div></td>
+        
+      </tr>
+      
+      <tr>
+        <td bgcolor="#EDEDED">
+        
+          <table width="100%" cellpadding="0" border="0">
+            <tbody><tr>
+              <td>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+<td><div class="pickmenucoldispname"><input type="CHECKBOX" name="recipe" value="400100*5" onclick="fillQty(15);"><a href="https://nutrition.sa.ucsc.edu/label.asp?locationNum=40&amp;locationName=Colleges+Nine+%26+Ten+Dining+Hall&amp;dtdate=06%2F01%2F2019&amp;RecNumAndPort=400100%2A5" target="_top" onmouseover="window.status = 'Click for label of this item.'; return true;" onmouseout="window.status= ' ';">Szechuan Sweet Chili Tofu</a></div></td>
+
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/vegan.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/soy.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                         <td width="10%">
+                           <img src="mac_and_cheese_pos_neg_files/gluten.gif" alt="" width="16" height="16" align="top">
+                         </td>
+                       
+                   </tr>
+                 </tbody></table>
+              </td>
+              
+                 <td width="10%">
+                   &nbsp;
+                 </td>
+              
+            </tr>
+          </tbody></table>
+        </td>
+        <td bgcolor="#EDEDED" align="center">
+<input type="TEXT" name="QTY" size="4" maxlength="4" onblur="checkBox(15);">
+
+        </td>
+        <td bgcolor="#EDEDED"><div class="pickmenucolportions">5&nbsp;oz</div></td>
+        
+      </tr>
+      
+      <tr>
+        <td colspan="3" height="40" bgcolor="#EDEDED" align="center">
+          <table width="100%" cellspacing="5" cellpadding="1" border="0">
+            <tbody><tr>
+              <td width="50%" align="right">
+                <input type="submit" value="Report" style="WIDTH: 70px" width="70px">
+              </td>
+              <td width="50%">
+                <input type="reset" value="Clear" style="WIDTH: 70px" width="70px">
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    
+    </tbody></table>
+  
+    <table width="100%" border="0" align="center"> 
+      <tbody><tr>    
+        <td><div class="pickmenufooter">Information is based on 
+availability and subject to change.  The nutrient composition of food 
+may vary due to genetic, environmental and processing variables; changes
+ in product formulation, manufacturer's data, cooking and preparation 
+techniques. The information provided in these labels should be 
+considered as approximations of the nutritional analysis of the food. </div></td>
+      </tr>
+    </tbody></table>
+  
+    <form>
+    <table width="100%" border="0">
+      <tbody><tr>
+        <td align="center">
+        <input type="button" value="Select a Dining Location" onclick="top.location.href='location.asp';" style="WIDTH: 225px" width="225px"> 
+        </td>
+        <td align="center">
+          <input type="button" value="Back to Dining Services" onclick="top.location.href='http://housing.ucsc.edu/dining/index.html';" style="WIDTH: 175px" width="175px">
+        </td>
+      </tr>
+    </tbody></table>
+    </form>
+  
+      <table width="100%" border="0" align="center">
+        <tbody><tr align="center">
+          <td colspan="3"><a href="#top">Top of Page</a></td>
+        </tr>
+      </tbody></table>
+    
+    </div>
+    
+    
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48253503-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    
+    
+  
+  
+
+
+   
+ </body></html>
+<!-- The following is required by Aurora Information Systems, DO NOT MODIFY OR REMOVE -->
+<!-- PICKMENU.ASP, Version 2.2.3  -->
+<!-- End of Aurora Information Systems Required Text -->
