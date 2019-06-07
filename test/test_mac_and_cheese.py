@@ -23,7 +23,7 @@ def main():
                                                  menus=menus,
                                                  urls=urls)
 
-    good_food = {"mac and cheese": {"mac"}}
+    good_food = {"mac and cheese": {"mac+cheese"}}
 
     food_found, urls = find_good_food(good_food=good_food, menus=menus, urls=urls)
 

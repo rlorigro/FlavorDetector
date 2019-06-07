@@ -23,7 +23,7 @@ class FoodBot:
         self.target_time = target_time
 
         self.good_food = {"Indian food": {"korma", "tikka", "curry", "naan", "saag", "samosa", "paneer", "madras"},
-                          "Mac and cheese": {"mac"},
+                          "Mac and cheese": {"mac+cheese"},
                           "Chicken wings": {"wings"}}
 
         self.emojis = {"Indian food": ":flag-in:",

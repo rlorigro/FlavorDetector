@@ -24,8 +24,12 @@ def find_good_food(good_food=None, menus=None, urls=None):
     for dining_hall in menus:
         for item in menus[dining_hall]:
             for food_type in good_food:
-                for keyword in good_food[food_type]:
-                    if keyword in item.lower():
+                for keywords in good_food[food_type]:
+                    all_found = True
+                    for keyword in keywords.split('+'):
+                        if keyword not in item.lower():
+                            all_found = False
+                    if all_found:
                         good_foods_detected[food_type]["location"] = dining_hall
                         good_foods_detected[food_type]["items"].append(item)
 
