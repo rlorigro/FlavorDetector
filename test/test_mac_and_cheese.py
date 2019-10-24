@@ -1,7 +1,7 @@
 import sys
 import os
 sys.path.append(os.path.dirname(sys.path[0]))
-from handlers.MenuParser import MenuParser
+from handlers.MenuParserV2 import MenuParser
 from modules.find_good_food import find_good_food
 
 
@@ -9,23 +9,19 @@ def main():
     script_directory = os.path.dirname(os.path.realpath(__file__))
 
     html_directory = os.path.join(script_directory, "pages")
-    html_path = os.path.join(html_directory, "mac_and_cheese_pos_neg.html")
+    html_path = "file://" + os.path.join(html_directory, "mac_and_cheese_pos_neg_Nine.html")
 
     print("Testing %s" % html_path)
 
     menus = dict()
-    urls = dict()
+    parser = MenuParser()
+    menus = parser.parse_menu_page(url=html_path, menus=menus)
 
-    with open(html_path, "r") as page:
-        menus, urls = MenuParser.parse_menu_page(name="test_mac_and_cheese",
-                                                 page=page,
-                                                 url="www.test_mac_and_cheese.com",
-                                                 menus=menus,
-                                                 urls=urls)
+    print(menus)
 
     good_food = {"mac and cheese": {"mac+cheese"}}
 
-    food_found, urls = find_good_food(good_food=good_food, menus=menus, urls=urls)
+    food_found = find_good_food(good_food=good_food, menus=menus)
 
     items_detected = set()
     for food_type in food_found:

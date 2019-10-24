@@ -36,7 +36,7 @@ class FoodBot:
 
         return config["Authorization"]["bot_user_access_token"]
 
-    def generate_message(self, good_foods_detected, urls):
+    def generate_message(self, good_foods_detected):
         lines = list()
 
         for food_type in good_foods_detected:
@@ -48,8 +48,6 @@ class FoodBot:
 
             for item in good_foods_detected[food_type]["items"]:
                 lines.append("\t- %s" % item)
-
-            lines.append("\n" + urls[dining_hall_name])
 
         message = "\n".join(lines)
 
@@ -73,13 +71,15 @@ class FoodBot:
         if self.client.rtm_connect(with_team_state=False):
             print("Bot connected!")
 
-            good_foods_detected, urls = self.find_good_food(self.good_food)
+            good_foods_detected = self.find_good_food(self.good_food)
 
             if len(good_foods_detected) == 0:
                 print("No good food detected :(")
 
             if len(good_foods_detected) > 0:
-                message = self.generate_message(good_foods_detected, urls)
+                message = self.generate_message(good_foods_detected)
+
+                print(message)
 
                 self.client.api_call(
                     "chat.postMessage",
