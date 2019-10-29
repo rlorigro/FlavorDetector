@@ -1,5 +1,5 @@
 from find_good_food import find_good_food
-from slackclient import SlackClient
+from slack import WebClient
 import configparser
 import datetime
 import time
@@ -16,7 +16,9 @@ class FoodBot:
         self.config_path = config_path
         self.key = self.get_key_from_config_file()
 
-        self.client = SlackClient(self.key)
+        self.client = WebClient(token=self.key, timeout=30)
+        print("Client established...")
+
         self.find_good_food = find_good_food
 
         self.date_prev = datetime.date(year=1, month=1, day=1)
@@ -68,30 +70,23 @@ class FoodBot:
             time.sleep(30)
 
     def update(self):
-        if self.client.rtm_connect(with_team_state=False):
-            print("Bot connected!")
+        print("Searching menus...")
 
-            good_foods_detected = self.find_good_food(self.good_food)
+        good_foods_detected = self.find_good_food(self.good_food)
 
-            if len(good_foods_detected) == 0:
-                print("No good food detected :(")
+        if len(good_foods_detected) == 0:
+            print("No good food detected :(")
 
-            if len(good_foods_detected) > 0:
-                message = self.generate_message(good_foods_detected)
+        if len(good_foods_detected) > 0:
+            message = self.generate_message(good_foods_detected)
 
-                print(message)
+            print(message)
 
-                self.client.api_call(
-                    "chat.postMessage",
-                    channel=self.channel,
-                    text=message)
+            self.client.chat_postMessage(
+                channel=self.channel,
+                text=message)
 
-            return True
-
-        else:
-            print("Connection failed")
-
-            return False
+        return True
 
 
 if __name__ == "__main__":

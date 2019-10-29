@@ -7,6 +7,7 @@ def main():
     menus = parser.get_todays_menus()
 
     for dining_hall in menus:
+        print(dining_hall)
         print(menus[dining_hall])
 
 
